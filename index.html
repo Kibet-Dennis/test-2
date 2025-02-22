@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+ <main class="container mx-auto px-4 py-8">
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
@@ -11,7 +12,6 @@
     </script>
     <meta charset="UTF-8">
     <meta> 
-name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guru Creation</title>
     <script src="https://cdn.tailwindcss.com"></script>
 <style>
@@ -46,14 +46,13 @@ name="viewport" content="width=device-width, initial-scale=1.0">
         <section id="home" class="mb-8 bg-gradient-to-r from-blue-500 to-green-500 text-white text-center p-10 rounded-lg">
             <h1 class="text-4xl font-bold mb-4">Welcome to Guru Creation</h1>
             <p class="text-lg mb-6">Your one-stop solution for all creative and branding needs. Transform your ideas into reality with our expert services.</p>
-            <div class="flex justify-center space-x-4">
+            <div> class="flex justify-center space-x-4">
                 <a href="#services" class="bg-white text-blue-600 py-2 px-4 rounded hover:bg-blue-100 font-semibold">Our Services</a>
 				<a href="#portfolio" class="bg-white text-yellow-600 py-2 px-4 rounded hover:bg-yellow-100 font-semibold">Portfolio</a>
                 <a href="#advertise" class="bg-white text-green-600 py-2 px-4 rounded hover:bg-green-100 font-semibold">Advertise with Us</a>
 				<a href="#team" class="bg-white text-yellow-600 py-2 px-4 rounded hover:bg-yellow-100 font-semibold">Our Team</a>
 				<a href="#contact" class="bg-white text-yellow-600 py-2 px-4 rounded hover:bg-yellow-100 font-semibold">Contact Us</a>
 				<a href="https://summarycreatives.co.ke/" target="_blank" class="bg-white text-purple-600 py-2 px-4 rounded hover:bg-purple-100 font-semibold">Summary creation</a>
-            </div>
             </div>
         </section>
         <!-- About Us Section -->
@@ -121,34 +120,131 @@ A dynamic web-based platform, Guru Creation offers community engagement, live st
             </script>         
         </section>        
       <section id="additional-services" class="mb-8 bg-gray-200 p-6 rounded-lg">
-            <h2 class="text-2xl font-bold mb-4 text-center">OurServices</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-white shadow-lg rounded-lg p-6 text-center cursor-pointer" onclick="openService('Livestreaming')">
-                    <h3 class="text-xl font-bold">Livestreaming</h3>
-                    <p>Connect with us through live events. We offer links to popular platforms such as YouTube, Twitch, Facebook Live, and Vimeo Live for seamless streaming experiences.</p>
-                </div>
-                <div class="bg-white shadow rounded-lg p-6 text-center">
+            <h2  class="bg-gray-100 text-gray-800">
+    <main class="container mx-auto px-4 py-8 max-w-screen-xl flex flex-col items-center">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guru Creations</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .hidden { display: none; }
+        .fade-in { animation: fadeIn 0.5s ease-in-out; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section id="our-services">
+            <h2>Our Services</h2>
+            <div>
+                <button onclick="toggleService('photography-details')">Photography</button>
+                <button onclick="toggleService('graphics-details')">Graphics</button>
+                <button onclick="toggleService('web-development-details')">Web Development</button>
+                <button onclick="toggleService('packaging-branding-details')">Packaging & Branding</button>
+                <button onclick="toggleService('large-format-details')">Large Format</button>
+                <button onclick="toggleService('livestreaming-details')">Livestreaming</button>
+            </div>
+            <div id="service-details" class="hidden"></div>
+        </section>
+    </main>
+    <script>
+        function toggleService(serviceId) {
+            $.getJSON('?service_id=' + serviceId, function(data) {
+                $('#service-details').html('<h3>' + data.title + '</h3><p>' + data.description + '</p>').removeClass('hidden').addClass('fade-in');
+            }).fail(function() {
+                $('#service-details').html('<h3>Error</h3><p>Failed to load service details.</p>').removeClass('hidden').addClass('fade-in');
+            });
+        }
+    </script>
+</body>
+
+        <!-- Livestreaming Section -->
+        <section id="our-services" class="mb-8 w-full max-w-screen-lg">
+            <h2 class="text-2xl font-bold mb-4 text-center">our services
+          </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="bg-blue-100 shadow rounded-lg p-6 text-center cursor-pointer" onclick="toggleService('photography-details')">
                     <h3 class="text-xl font-bold">Photography</h3>
-                    <p>Capture your special moments with our professional photography services. From events to personal projects, we ensure high-quality visuals that preserve memories beautifully..</p>
+                    <p>Professional photography services for events, portraits, and branding.</p>
                 </div>
-                <div class="bg-white shadow rounded-lg p-6 text-center">
+                <div class="bg-green-100 shadow rounded-lg p-6 text-center cursor-pointer" onclick="toggleService('graphics-details')">
                     <h3 class="text-xl font-bold">Graphics</h3>
-                    <p>Transform your ideas into visually compelling designs with our graphic design services. From branding to promotional materials, we deliver creative solutions tailored to your needs..</p>
+                    <p>Creative and professional graphic design services for businesses.</p>
                 </div>
-                <div class="bg-white shadow rounded-lg p-6 text-center">
-                    <h3 class="text-xl font-bold">Website Development</h3>
-                    <p>Bring your ideas to life with our bespoke website development services. We craft visually appealing, functional, and user-friendly websites tailored to your unique needs and goals..</p>
+                <div class="bg-red-100 shadow rounded-lg p-6 text-center cursor-pointer" onclick="toggleService('web-development-details')">
+                    <h3 class="text-xl font-bold">Web Development</h3>
+                    <p>Building modern, responsive, and user-friendly websites.</p>
                 </div>
-            </div>
-                <div class="bg-white shadow rounded-lg p-6 text-center">
+                <div class="bg-yellow-100 shadow rounded-lg p-6 text-center cursor-pointer" onclick="toggleService('packaging-branding-details')">
                     <h3 class="text-xl font-bold">Packaging & Branding</h3>
-                    <p>Elevate your brand identity with our packaging and branding solutions. From designing custom gift bags to personalized merchandise, we ensure your brand stands out in every detail..</p>
+                    <p>Custom branding and packaging solutions for your business.</p>
                 </div>
-                <div class="bg-white shadow rounded-lg p-6 text-center">
-                    <h3 class="text-xl font-bold">Large Format: Banners and Stickers</h3>
-                    <p>Make a big impact with our large-format printing services. We create eye-catching banners and stickers that are perfect for events, promotions, and branding..</p>
-                </div>             
+                <div class="bg-purple-100 shadow rounded-lg p-6 text-center cursor-pointer" onclick="toggleService('large-format-details')">
+                    <h3 class="text-xl font-bold">Large Format</h3>
+                    <p>High-quality banners, posters, and large-scale prints.</p>
+                </div>
+                <div class="bg-orange-100 shadow rounded-lg p-6 text-center cursor-pointer" onclick="toggleLiveStreaming()">
+                    <h3 class="text-xl font-bold">Livestreaming</h3>
+                    <p>Connect with us through live events on YouTube, Twitch, and Facebook Live.</p>
+                </div>
+                <div id="livestreaming-details" class="hidden bg-gray-200 p-6 rounded-lg mt-4">
+                    <h3 class="text-xl font-bold">Livestreaming Details</h3>
+                    <p>We provide high-quality live streaming services for events, webinars, and more.</p>
+                </div>
             </div>
+        </section>
+    </main>
+
+    <script>
+        function toggleLiveStreaming() {
+            // Hide all other service details
+            document.querySelectorAll('.service-detail').forEach(div => {
+                if (div.id !== 'livestreaming-details') {
+                    div.classList.add('hidden');
+                    div.classList.remove('fade-in');
+                }
+            });
+            
+            // Toggle selected service
+            const selectedService = document.getElementById('livestreaming-details');
+            if (selectedService.classList.contains('hidden')) {
+                selectedService.classList.remove('hidden');
+                selectedService.classList.add('fade-in');
+            } else {
+                selectedService.classList.add('hidden');
+                selectedService.classList.remove('fade-in');
+            }
+        }
+	</script>
+	<script>
+        function toggleLiveStreaming() {
+            // Hide all other service details
+            document.querySelectorAll('.service-detail').forEach(div => {
+                if (div.id !== 'livestreaming-details') {
+                    div.classList.add('hidden');
+                    div.classList.remove('fade-in');
+                }
+            });
+            
+            // Toggle selected service
+            const selectedService = document.getElementById('photography');
+            if (selectedService.classList.contains('hidden')) {
+                selectedService.classList.remove('hidden');
+                selectedService.classList.add('fade-in');
+            } else {
+                selectedService.classList.add('hidden');
+                selectedService.classList.remove('fade-in');
+            }
+        }
+    </script>
+    </script>
         </section>
         <section id="additional-services" class="mb-8 bg-gray-200 p-6 rounded-lg">
             <h2 class="text-2xl font-bold mb-4 text-center">Additional Services</h2>
@@ -360,7 +456,7 @@ A dynamic web-based platform, Guru Creation offers community engagement, live st
                             </a>
                         </div>
                     </div>
-                    <h3 class="text-lg font-bold">John Kisibu</h3>
+                    <h3 class="text-lg font-bold">John Kisibo</h3>
                     <p>Branding</p>
                 </div>
                 <div class="text-center">
@@ -408,47 +504,30 @@ A dynamic web-based platform, Guru Creation offers community engagement, live st
                             </a>
                         </div>
                     </div>
-                    <h3 class="text-lg font-bold">Moreen Musoliza</h3>
+                    <h3 class="text-lg font-bold">Maureen Musoliza</h3>
                     <p>Designer</p>
                 </div>
             </div>
         </section>
-        <!-- Payments Section -->
-        <section id="payments" class="mb-8">
-            <h2 class="text-2xl font-bold mb-4 text-center">Make a Payment</h2>
-            <p class="text-lg mb-4 text-center">Support us or pay for services through the following methods:</p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- PayPal Payment -->
-                <div class="bg-blue-100 p-6 rounded-lg">
-                    <h3 class="text-xl font-bold mb-4 text-center">Pay via PayPal</h3>
-                    <form action="https://www.paypal.com/donate" method="post" target="_blank" class="space-y-4">
-                        <input type="hidden" name="hosted_button_id" value="YOUR_PAYPAL_BUTTON_ID">
-                        <label for="payment-purpose" class="block text-lg font-semibold">Payment Purpose:</label>
-                        <select id="payment-purpose" name="item_name" class="p-2 border rounded w-full">
-                            <option value="Donation">Donation</option>
-                            <option value="Service Fee">Service Fee</option>
-                            <option value="Custom Request">Custom Request</option>
-                        </select>
-                        <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 w-full">
-                            Proceed to PayPal
-                        </button>
-                    </form>
+			 <!-- Why Choose Guru Creations Section -->
+        <section id="why-choose" class="mb-8 w-full max-w-screen-lg bg-yellow-100 p-6 rounded-lg">
+            <h2 class="text-3xl font-bold mb-4 text-center">Why Choose Guru Creations?</h2>
+            <p class="text-lg text-center">At Guru Creations, we blend creativity, innovation, and expertise to bring your vision to life. Our services are tailored to meet your unique needs, ensuring high-quality, impactful designs and branding solutions.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6">
+                <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+                    <h3 class="text-xl font-bold">Creative Excellence</h3>
+                    <p>We push creative boundaries to deliver unique and inspiring designs.</p>
                 </div>
-                <!-- M-Pesa Payment -->
-                <div class="bg-green-100 p-6 rounded-lg">
-                    <h3 class="text-xl font-bold mb-4 text-center">Pay via M-Pesa</h3>
-                    <p class="text-lg mb-2">Follow these steps to make a payment using M-Pesa:</p>
-                    <ol class="list-decimal pl-6 text-lg space-y-2">
-                        <li>Go to the M-Pesa menu on your phone.</li>
-                        <li>Select <strong>Lipa na M-Pesa</strong>.</li>
-                        <li>Choose <strong>Paybill</strong>.</li>
-                        <li>Enter the Paybill Number: <strong>247247</strong>.</li>
-                        <li>Enter the Account Number: <strong>1370186071033</strong>.</li>
-                        <li>Enter the amount and complete the payment.</li>
-                    </ol>
-                    <p class="text-lg mt-4">Once payment is complete, save the transaction ID for reference.</p>
+                <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+                    <h3 class="text-xl font-bold">Client-Centric Approach</h3>
+                    <p>Your vision is our priority, and we work closely to ensure your expectations are exceeded.</p>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+                    <h3 class="text-xl font-bold">Cutting-Edge Solutions</h3>
+                    <p>We utilize the latest design tools and technology to keep your brand ahead.</p>
                 </div>
             </div>
+        </section>
         </section>
        <!-- Contact Section -->
         <section id="contact" class="mb-8 bg-purple-100 p-6 rounded-lg">
@@ -519,7 +598,33 @@ A dynamic web-based platform, Guru Creation offers community engagement, live st
                 </svg>
             </a>
         </div>
-    </footer>
+	
+<div class="text-far left center mt-4">
+            <button onclick="openPaymentModal()" class="bg-white text-blue-600 py-2 px-4 rounded hover:bg-blue-100 font-semibold">Pay Here</button>
+        </div>
+        
+        <!-- Payment Modal -->
+        <div id="payment-modal" class="fixed inset-0 bg-gray-800 bg-opacity-75 hidden flex items-center justify-center">
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center w-96">
+                <h2 class="text-xl font-bold mb-4">Choose Payment Method</h2>
+                <a href="https://www.paypal.com/donate?hosted_button_id=YOUR_PAYPAL_BUTTON_ID" target="_blank" class="block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 mb-2">Pay with PayPal</a>
+                <div class="bg-green-600 text-white py-2 px-4 rounded-fullmb-2">
+                    <h3 class="text-lg font-bold">Pay with M-Pesa</h3>
+                    <p>Go to M-Pesa menu, select <strong>Paybill</strong>, enter Paybill Number: <strong>247247</strong>, and Account Number: <strong>1370186071033</strong>.</p>
+                </div>
+                <button onclick="closePaymentModal()" class="mt-4 bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600">Close</button>
+            </div>
+        </div>
+        
+        <script>
+            function openPaymentModal() {
+                document.getElementById('payment-modal').classList.remove('hidden');
+            }
+            function closePaymentModal() {
+                document.getElementById('payment-modal').classList.add('hidden');
+            }
+        </script>
+        </footer>
 
 <script>
     // Back to Top Button Visibility on Scroll
